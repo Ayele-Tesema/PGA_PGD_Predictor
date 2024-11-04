@@ -1,0 +1,7 @@
+Flask==2.2.5
+scikit-learn==1.5.2
+joblib==1.2.0
+numpy==1.26.4
+PySimpleGUI== 5.0.7
+pickle
+optuna
