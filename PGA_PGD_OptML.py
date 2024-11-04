@@ -62,7 +62,10 @@ layout = [
             ], title="Output", font=font)],
         ], justification="left"),
     ],      
+            [sg.Text('Author: Ayele T. Chala, Szechenyi Istvan University, Hungary'+ '\n'
+             '             Email: chala.ayele.tesema@hallgato.sze.hu')],
 ]
+
 # Create window with specified size
 window = sg.Window("Optimized Machine Learning Tool for Efficient PGA and PGD Predictions",layout, size=(650, 350), resizable=True)
 
