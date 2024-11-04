@@ -1,4 +1,4 @@
-# Optimized Machine Learning Tool for Efficient PGA and PGD Predictions
+# Optimized Machine Learning Tool for Efficient PGA and PGD Predictions!
 
 Welcome to the Optimized Machine Learning Tool for Efficient PGA and PGD Predictions repository! This tool is designed to provide a rapid and accurate accurate prediction of peak ground acceleration and displacement (PGA & PGD).
 
@@ -14,7 +14,7 @@ To get started with prediction tool, you need to have Python and required librar
 To successfully run the tool, please follow these steps:
 
 1. **Install Python**
-   - Ensure Python is installed on your system. you can download and install it from the [official Python website](https://www.python.org/).
+   - Ensure Python is installed on your system. You can download and install it from the [official Python website](https://www.python.org/).
 
 2. **Install Required Libraries**
    - Install the necessary Python libraries by opening your terminal or command prompt and running the following command:
