@@ -33,29 +33,36 @@ layout = [
     [
         sg.Column(layout=[
             [sg.Frame(layout=[
-                [sg.Text("PI (%)", font=font, size=(20, 1)), sg.InputText(key="-PI-", size=(15, 1),font=font,text_color='red')],
-                [sg.Text("H (m)", font=font, size=(20, 1)), sg.InputText(key="-H-", size=(15, 1),font=font,text_color='red')],
-                [sg.Text("γ (kN/m³)", font=font, size=(20, 1)), sg.InputText(key="-gamma-", size=(15, 1),font=font,text_color='red')],
-                [sg.Text("Vs (m/s)", font=font, size=(20, 1)), sg.InputText(key="-Vs-", size=(15, 1),font=font,text_color='red')],
-                [sg.Text("αgR (g)", font=font, size=(20, 1)), sg.InputText(key="-agR-", size=(15, 1),font=font,text_color='red')],
+                [sg.Text("PI (%)", font=font, size=(20, 1)), sg.InputText(key="-PI-", size=(15, 1), font=font, text_color='red')],
+                [sg.Text("H (m)", font=font, size=(20, 1)), sg.InputText(key="-H-", size=(15, 1), font=font, text_color='red')],
+                [sg.Text("γ (kN/m³)", font=font, size=(20, 1)), sg.InputText(key="-gamma-", size=(15, 1), font=font, text_color='red')],
+                [sg.Text("Vs (m/s)", font=font, size=(20, 1)), sg.InputText(key="-Vs-", size=(15, 1), font=font, text_color='red')],
+                [sg.Text("αgR (g)", font=font, size=(20, 1)), sg.InputText(key="-agR-", size=(15, 1), font=font, text_color='red')],
             ], title="Input parameters", font=font)],
         ], justification='left'),
 
         sg.Column(layout=[
             [sg.Frame(layout=[
-                [sg.Text(f"PI (%): {feature_ranges['PI (%)'][0]} ≤ PI ≤ {feature_ranges['PI (%)'][1]}", font=font,)],
+                [sg.Text(f"PI (%): {feature_ranges['PI (%)'][0]} ≤ PI ≤ {feature_ranges['PI (%)'][1]}", font=font)],
                 [sg.Text(f"H (m): {feature_ranges['H (m)'][0]} ≤ H ≤ {feature_ranges['H (m)'][1]}", font=font)],
                 [sg.Text(f"γ (kN/m³): {feature_ranges['γ (kN/m³)'][0]} ≤ γ ≤ {feature_ranges['γ (kN/m³)'][1]}", font=font)],
                 [sg.Text(f"Vs (m/s): {feature_ranges['Vs (m/s)'][0]} ≤ Vs ≤ {feature_ranges['Vs (m/s)'][1]}", font=font)],
                 [sg.Text(f"αgR (g): {feature_ranges['αgR (g)'][0]} ≤ αgR ≤ {feature_ranges['αgR (g)'][1]}", font=font)],
-            ], title="Application scope of the model",font=font)],
+            ], title="Application scope of the model", font=font)],
         ], justification='center'),
     ],
     [sg.Button("Predict", font=font), sg.Button("Cancel", font=font)],
-    [sg.Text("Predicted PGA (g): ", font=font), sg.InputText(key="-PGA-", font=font, text_color='blue',size=(15, 1))],
-    [sg.Text("Predicted PGD (cm): ",font=font), sg.InputText(key="-PGD-", font=font,text_color='blue', size=(15, 1))],
-]
+    [sg.Text("Predicted peak ground acceleration (PGA) and displacement (PGD)", font=font)],
 
+    [
+        sg.Column(layout=[
+            [sg.Frame(layout=[
+                [sg.Text("Predicted PGA (g): ", font=font), sg.InputText(key="-PGA-", font=font, text_color='blue', size=(15, 1))],
+                [sg.Text("Predicted PGD (cm): ", font=font), sg.InputText(key="-PGD-", font=font, text_color='blue', size=(15, 1))],
+            ], title="Output", font=font)],
+        ], justification="left"),
+    ],      
+]
 # Create window with specified size
 window = sg.Window("Optimized Machine Learning Tool for Efficient PGA and PGD Predictions",layout, size=(650, 350), resizable=True)
 
