@@ -2,7 +2,7 @@
 
 Welcome to the Optimized Machine Learning Tool for Efficient PGA and PGD Predictions repository! This tool is designed to provide a rapid and accurate accurate prediction of peak ground acceleration and displacement (PGA & PGD).
 
-## Getting Started
+## Getting Started!
 
 ### Installation
 

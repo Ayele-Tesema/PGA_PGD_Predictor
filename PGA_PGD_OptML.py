@@ -1,8 +1,6 @@
 import PySimpleGUI as sg
 import numpy as np
 import pickle
-
-# Load both models and scalers
 with open("PGA_model.pkl", "rb") as pga_file:
     pga_data = pickle.load(pga_file)
     pga_model = pga_data['model']
