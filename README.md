@@ -38,5 +38,5 @@ Following these instructions will enable you to run the PGA_PGD_OptML.py applica
 
 ## Contact
 
-For inquiries or assistance, feel free to reach out through my email: chala.ayele.tesema@hallgato.sze.hun
+For inquiries or assistance, feel free to reach out through my email: chala.ayele.tesema@hallgato.sze.hu/sonoft@gmail.com
 
