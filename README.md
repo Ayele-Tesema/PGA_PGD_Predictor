@@ -6,7 +6,7 @@ The STRATA simulations used to generate the training dataset assume:
 - A **laterally-infinite (horizontally layered)** soil column — i.e., no 2-D/3-D lateral heterogeneity is modeled.  
 - An **elastic half-space** (bedrock) underlying the soil column, consistent with STRATA’s 1-D formulation. 
 - Input motions specified at the rock interface using STRATA’s **Outcrop** motion option (outcropping rock input). 
-**Valid input ranges (model domain)**  
+## **Valid input ranges (model domain)**  
 The models are trained and valid within the parameter ranges sampled in our STRATA simulations. Use outside these ranges may be unreliable (results in error notifications):
 -	PI (%): 0–60
 -	H (m): 10–100
