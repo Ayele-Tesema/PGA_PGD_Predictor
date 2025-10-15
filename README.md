@@ -4,7 +4,7 @@ Welcome to the Optimized Machine Learning Tool for Efficient PGA and PGD Predict
 
 **Core boundary / geometric assumptions used in the simulations.**  
 
-The STRATA simulations used to generate the training dataset assume:
+The STRATA simulations assume:
 - A **laterally-infinite (horizontally layered)** soil column — i.e., no 2-D/3-D lateral heterogeneity is modeled.  
 - An **elastic half-space** (bedrock) underlying the soil column, consistent with STRATA’s 1-D formulation. 
 - Input motions specified at the rock interface using STRATA’s **Outcrop** motion option (outcropping rock input).
