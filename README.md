@@ -8,11 +8,11 @@ The STRATA simulations used to generate the training dataset assume:
 - Input motions specified at the rock interface using STRATA’s **Outcrop** motion option (outcropping rock input). 
 **Valid input ranges (model domain)**  
 The models are trained and valid within the parameter ranges sampled in our STRATA simulations. Use outside these ranges may be unreliable (results in error notifications):
-•	PI (%): 0–60
-•	H (m): 10–100
-•	γ (kN/m³): 12–24
-•	Vs (m/s): 100–650
-•	αgR (g): 0.05–1
+-	PI (%): 0–60
+-	H (m): 10–100
+-	γ (kN/m³): 12–24
+-	Vs (m/s): 100–650
+-	αgR (g): 0.05–1
 
 
 ## Getting Started!
