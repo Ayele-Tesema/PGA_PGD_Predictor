@@ -1,12 +1,11 @@
 # Optimized Machine Learning Tool for Efficient PGA and PGD Predictions
 
-Welcome to the Optimized Machine Learning Tool for Efficient PGA and PGD Predictions repository! This tool is designed to provide a rapid prediction of peak ground acceleration and displacement (PGA & PGD).The ML models in this repository were trained on *simulated* ground-motion datasets generated using **STRATA** (1-D equivalent-linear site-response program). STRATA propagates vertically-induced shear waves through a layered soil column. 
+Welcome to the Optimized Machine Learning Tool for Efficient PGA and PGD Predictions repository! This tool is designed to provide a rapid prediction of peak ground acceleration and displacement (PGA & PGD).The ML models in this repository were trained on *simulated* ground-motion datasets generated using **STRATA** (1-D equivalent-linear site-response program). 
 **Core boundary / geometric assumptions used in the simulations.**  
 The STRATA simulations used to generate the training dataset assume:
-- A **laterally-infinite (horizontally layered)** soil column — i.e., no 2-D/3-D lateral heterogeneity is modeled. :contentReference[oaicite:3]{index=3}  
-- An **elastic half-space** (bedrock) underlying the soil column, consistent with STRATA’s 1-D formulation. :contentReference[oaicite:4]{index=4}  
-- Input motions specified at the rock interface using STRATA’s **Outcrop** motion option (outcropping rock input). The choice of outcrop vs. within/inside motion affects surface amplitudes and cycle content; see STRATA documentation and the literature for details. :contentReference[oaicite:5]{index=5}
-
+- A **laterally-infinite (horizontally layered)** soil column — i.e., no 2-D/3-D lateral heterogeneity is modeled.  
+- An **elastic half-space** (bedrock) underlying the soil column, consistent with STRATA’s 1-D formulation. 
+- Input motions specified at the rock interface using STRATA’s **Outcrop** motion option (outcropping rock input). 
 **Valid input ranges (model domain)**  
 The models are trained and valid within the parameter ranges sampled in our STRATA simulations. Use outside these ranges may be unreliable (results in error notifications):
 •	PI (%): 0–60
