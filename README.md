@@ -11,7 +11,8 @@ The STRATA simulations assume:
   
  **Valid input ranges (model domain)**
   
-The models are trained and valid within the parameter ranges sampled in our STRATA simulations. Use outside these ranges may be unreliable (results in error notifications):
+The models are trained and valid within the parameter ranges:
+
 -	Plasticity Index-PI (%): 0–60
 - soil thickness-H (m): 10–100
 -	unit weight of soil-γ (kN/m³): 12–24
