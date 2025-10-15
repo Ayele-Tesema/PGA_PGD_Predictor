@@ -13,10 +13,10 @@ The STRATA simulations assume:
   
 The models are trained and valid within the parameter ranges sampled in our STRATA simulations. Use outside these ranges may be unreliable (results in error notifications):
 -	plasticity index-PI (%): 0–60
--soil thickness-H (m): 10–100
+- soil thickness-H (m): 10–100
 -	unit weight of soil-γ (kN/m³): 12–24
 -	shear wave velocity-Vs (m/s): 100–650
--reference peak ground acceleratio-αgR (g): 0.05–1
+- reference peak ground acceleratio-αgR (g): 0.05–1
 
 
 ## Getting Started!
