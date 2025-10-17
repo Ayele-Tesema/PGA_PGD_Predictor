@@ -1,3 +1,4 @@
+#Final GUI
 import PySimpleGUI as sg
 import numpy as np
 import pickle
@@ -12,7 +13,14 @@ with open("PGD_model.pkl", "rb") as pgd_file:
     pgd_model = pgd_data['model']
     pgd_scaler_X = pgd_data['scaler_X']
     pgd_scaler_y = pgd_data['scaler_y']
+# Residual standard errors (RSE)
 
+RSE_PGA = 0.06
+RSE_PGD = 5.45
+
+# 95% confidence level (t-value ≈ 1.96)
+
+t_value = 1.96
 # Define ranges for features
 feature_ranges = {
     "PI (%)": [0, 60],
@@ -59,13 +67,25 @@ layout = [
                 [sg.Text("Predicted PGD (cm): ", font=font), sg.InputText(key="-PGD-", font=font, text_color='blue', size=(15, 1))],
             ], title="Output", font=font)],
         ], justification="left"),
-    ],      
-            [sg.Text('Author: Ayele T. Chala, Szechenyi Istvan University, Hungary'+ '\n'
-             '             Email: chala.ayele.tesema@hallgato.sze.hu')],
+        sg.Column(layout=[
+            [sg.Frame(layout=[
+                [sg.Text("PGA (g): ", font=font), sg.InputText(key="-PGA_PI-", font=font, text_color='blue', size=(25, 1))],
+                [sg.Text("PGD (cm): ", font=font), sg.InputText(key="-PGD_PI-", font=font, text_color='blue', size=(25, 1))],
+            ], title="95% Prediction Intervals (PI)", font=font)],
+        ], justification='center'),        
+    ],
+    [
+        sg.Column(layout=[
+            [sg.Frame(layout=[
+                [sg.Text('Author: Ayele T. Chala, Szechenyi Istvan University, Hungary'+ '\n'
+             '             Email: chala.ayele.tesema@hallgato.sze.hu')],                
+            ], title="Contact", font=font)],
+        ], justification="left"),        
+    ],
 ]
 
 # Create window with specified size
-window = sg.Window("Optimized Machine Learning Tool for Efficient PGA and PGD Predictions",layout, size=(650, 350), resizable=True)
+window = sg.Window("Optimized Machine Learning Tool for Efficient PGA and PGD Prediction",layout, size=(650, 350), resizable=True)
 
 # Main event loop
 while True:
@@ -104,10 +124,17 @@ while True:
             # Inverse transform predictions
             pga_pred_original = pga_scaler_y.inverse_transform([[pga_pred_scaled]])[0, 0]
             pgd_pred_original = pgd_scaler_y.inverse_transform([[pgd_pred_scaled]])[0, 0]
-
+# Compute prediction intervals
+            lower_PGA = max(pga_pred_original - t_value * RSE_PGA,0)
+            upper_PGA = pga_pred_original + t_value * RSE_PGA
+            lower_PGD = max(pgd_pred_original - t_value * RSE_PGD, 0)
+            upper_PGD = pgd_pred_original + t_value * RSE_PGD
             # Display the predictions
-            window["-PGA-"].update(np.round(pga_pred_original, 3))
-            window["-PGD-"].update(np.round(pgd_pred_original, 3))
+        # Update GUI
+            window["-PGA-"].update(round(pga_pred_original, 3))
+            window["-PGD-"].update(round(pgd_pred_original, 3))
+            window["-PGA_PI-"].update(f"({round(lower_PGA, 3)} - {round(upper_PGA, 3)})")
+            window["-PGD_PI-"].update(f"({round(lower_PGD, 3)} - {round(upper_PGD, 3)})")
 
         except Exception as e:
             sg.popup(f"Error: {e}\n\nInvalid input. Please make sure to enter numeric values.")
